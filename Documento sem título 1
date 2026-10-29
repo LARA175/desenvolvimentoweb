@@ -1,0 +1,151 @@
+Quero implementar um sistema de troca de idiomas no frontend do meu site, adicionando um botão de seleção de idiomas no menu superior (navbar/header).
+
+### 🌎 1. Seletor de idiomas
+
+Adicione um seletor de idiomas visualmente bonito, moderno e responsivo ao menu superior do site, utilizando as seguintes bandeiras:
+
+- 🇺🇸 **English (United States):** ao clicar, traduzir toda a interface do frontend para inglês norte-americano natural (en-US).
+- 🇪🇸 **Español:** ao clicar, traduzir toda a interface do frontend para espanhol (es-ES).
+- 🇧🇷 **Português (Brasil):** ao clicar, traduzir toda a interface do frontend para português brasileiro (pt-BR).
+
+O seletor deve permitir que o usuário troque de idioma facilmente, sem precisar recarregar a página.
+
+### 🎨 2. Design e experiência do usuário
+
+- Posicione o seletor no menu superior, respeitando o layout atual do site.
+- Utilize as bandeiras dos três países como opções de idioma.
+- Mostre visualmente qual idioma está selecionado.
+- Adicione um efeito visual discreto ao passar o mouse sobre as opções.
+- Utilize animações suaves e discretas, se forem compatíveis com o projeto.
+- Garanta que o seletor funcione corretamente em computadores, tablets e celulares.
+- Em telas pequenas, evite que as opções ultrapassem os limites da tela ou sobreponham outros elementos importantes.
+- Mantenha a identidade visual atual do site, incluindo cores, tipografia, espaçamentos e temas claro e escuro, caso existam.
+- Adicione acessibilidade: nomes dos idiomas para leitores de tela, navegação por teclado e estados de foco visíveis.
+
+### 🌐 3. Tradução completa do frontend
+
+A tradução deve abranger todos os textos visíveis da interface, incluindo:
+
+- Menu superior e navegação.
+- Botões e links.
+- Títulos e subtítulos.
+- Textos descritivos e informativos.
+- Formulários, campos, placeholders e mensagens de validação.
+- Mensagens de erro e sucesso exibidas pela interface.
+- Modais, menus suspensos, tooltips e notificações.
+- Textos de tabelas, filtros, paginação e estados vazios.
+- Telas de carregamento e mensagens de ausência de resultados.
+- Textos de acessibilidade, como rótulos e descrições de elementos.
+- Mensagens exibidas dinamicamente pelos componentes do frontend.
+
+Não traduza apenas a página inicial. Identifique as páginas, os componentes e os textos existentes no frontend para implementar a internacionalização de maneira consistente em toda a interface.
+
+### 🔒 4. REGRA OBRIGATÓRIA: MODIFICAR APENAS O FRONTEND
+
+Esta é a parte mais importante da implementação.
+
+**A tradução deve afetar exclusivamente a interface do usuário (frontend).**
+
+Não modifique:
+- Backend, APIs ou endpoints.
+- Banco de dados, tabelas ou estrutura dos dados.
+- Autenticação, login, cadastro ou permissões.
+- Regras de negócio ou lógica de processamento.
+- Estrutura das requisições e respostas da API.
+- Dados armazenados no banco de dados.
+- Conteúdos originais enviados ou recebidos do backend, exceto sua apresentação visual quando necessário.
+- Integrações com serviços externos.
+- Outras funcionalidades que não estejam relacionadas à troca de idioma.
+
+Os textos da interface devem ser traduzidos por meio de arquivos de tradução ou de um mecanismo de internacionalização compatível com a arquitetura existente.
+
+Não altere os dados originais. Por exemplo, nomes de usuários, nomes de produtos, nomes próprios, identificadores, códigos e valores devem continuar preservados, a menos que sejam textos de interface explicitamente destinados à tradução.
+
+Se o projeto possuir conteúdo dinâmico vindo de uma API, traduza somente os rótulos e elementos de interface controlados pelo frontend. Não altere os dados enviados ao servidor.
+
+### ⚙️ 5. Implementação técnica
+
+Antes de começar a programar:
+
+1. Analise a estrutura atual do projeto e identifique as tecnologias utilizadas.
+2. Verifique como o menu superior está implementado.
+3. Identifique se já existe alguma biblioteca ou sistema de internacionalização.
+4. Verifique se o projeto já possui arquivos de tradução ou configurações de idioma.
+5. Reutilize a arquitetura existente sempre que possível.
+
+Depois, implemente a solução seguindo estas regras:
+
+- Se já existir um sistema de internacionalização, reutilize-o e amplie-o.
+- Caso não exista, implemente uma solução compatível com o framework utilizado.
+- Organize as traduções em arquivos separados por idioma, se isso fizer sentido para a arquitetura.
+- Evite espalhar condições de idioma por todos os componentes.
+- Não utilize tradução automática por serviços externos a cada clique.
+- Não adicione dependências desnecessárias.
+- Preserve a linguagem de programação, as convenções e os padrões já utilizados no projeto.
+
+Configure os idiomas com os códigos corretos:
+- `en-US`
+- `es-ES`
+- `pt-BR`
+
+O idioma inicial deve respeitar a configuração atual do projeto. Se não houver configuração, utilize português brasileiro (`pt-BR`) como padrão.
+
+Se for seguro e compatível com a aplicação, salve a preferência do idioma no armazenamento local do navegador para que ela seja mantida após atualizar a página ou navegar entre telas. Não armazene informações sensíveis.
+
+### 🛡️ 6. Prevenção de bugs
+
+Tenha muito cuidado para não introduzir regressões.
+
+- Não reescreva componentes inteiros sem necessidade.
+- Não substitua arquivos completos quando alterações pontuais forem suficientes.
+- Não remova funcionalidades existentes.
+- Não altere rotas ou caminhos de navegação.
+- Não modifique estilos globais desnecessariamente.
+- Evite erros de renderização, hidratação ou carregamento, caso o projeto utilize essas tecnologias.
+- Evite que o seletor provoque mudanças inesperadas no layout.
+- Garanta que os textos não fiquem cortados ou sobrepostos após a tradução.
+- Não deixe chaves de tradução aparecendo na interface.
+- Não deixe textos importantes esquecidos em português quando outro idioma estiver selecionado.
+- Não provoque erros no console do navegador.
+- Não prejudique o desempenho ou a acessibilidade.
+
+### 🧪 7. Testes obrigatórios
+
+Depois da implementação, verifique:
+
+1. Se as três bandeiras aparecem corretamente no menu superior.
+2. Se clicar na bandeira dos EUA altera a interface para inglês norte-americano.
+3. Se clicar na bandeira da Espanha altera a interface para espanhol.
+4. Se clicar na bandeira do Brasil altera a interface para português brasileiro.
+5. Se a troca de idioma acontece sem recarregar a página, quando possível.
+6. Se o idioma selecionado permanece após atualizar a página, caso a persistência tenha sido implementada.
+7. Se a navegação entre páginas mantém o idioma selecionado.
+8. Se formulários, botões, modais, tabelas e notificações continuam funcionando.
+9. Se o seletor funciona em dispositivos móveis e em telas maiores.
+10. Se o tema claro e o escuro continuam funcionando, caso existam.
+11. Se nenhuma API, regra de negócio ou funcionalidade do backend foi alterada.
+12. Se os testes, verificações de tipos e ferramentas de análise disponíveis no projeto continuam passando.
+
+Corrija os problemas causados pelas alterações antes de finalizar.
+
+### 📋 8. Relatório final
+
+Ao concluir, informe:
+
+- Quais arquivos foram criados ou modificados.
+- Como o sistema de troca de idioma funciona.
+- Quais páginas e componentes foram internacionalizados.
+- Como a preferência de idioma é armazenada, caso isso tenha sido implementado.
+- Quais testes foram executados e seus resultados.
+- Se existe algum texto da interface que ainda não foi traduzido.
+- Confirme explicitamente que o backend, as APIs, o banco de dados e as regras de negócio não foram modificados.
+
+### INSTRUÇÃO FINAL
+
+Implemente essa funcionalidade diretamente no projeto existente, com alterações pequenas, seguras e organizadas.
+
+**Não faça refatorações desnecessárias. Não modifique nada fora do escopo da internacionalização do frontend. Não invente estruturas sem antes analisar o projeto.**
+
+Se alguma mudança necessária puder afetar o backend ou outras funcionalidades, não a execute automaticamente: procure uma alternativa exclusivamente no frontend.
+
+O objetivo é adicionar uma troca de idiomas profissional, funcional, acessível e sem regressões, preservando integralmente o funcionamento atual do sistema.
