@@ -1,151 +1,735 @@
-Quero implementar um sistema de troca de idiomas no frontend do meu site, adicionando um botão de seleção de idiomas no menu superior (navbar/header).
+# PLANO DE REDESIGN VISUAL — UI/UX PREMIUM
 
-### 🌎 1. Seletor de idiomas
+## 1. Objetivo principal
 
-Adicione um seletor de idiomas visualmente bonito, moderno e responsivo ao menu superior do site, utilizando as seguintes bandeiras:
+Modernizar a interface do projeto, elevando a qualidade visual ao máximo possível, com um design consistente, elegante, acessível e responsivo.
 
-- 🇺🇸 **English (United States):** ao clicar, traduzir toda a interface do frontend para inglês norte-americano natural (en-US).
-- 🇪🇸 **Español:** ao clicar, traduzir toda a interface do frontend para espanhol (es-ES).
-- 🇧🇷 **Português (Brasil):** ao clicar, traduzir toda a interface do frontend para português brasileiro (pt-BR).
+O redesign deve priorizar:
 
-O seletor deve permitir que o usuário troque de idioma facilmente, sem precisar recarregar a página.
+- Botões modernos e visualmente atraentes.
+- Tipografia elegante, legível e consistente.
+- Paleta de cores pastel sofisticada.
+- Modos Light e Dark completos e harmoniosos.
+- Componentes com aparência profissional.
+- Tabelas, formulários, menus e cartões visualmente refinados.
+- Microinterações e animações suaves.
+- Consistência visual em todas as páginas.
+- Excelente experiência em computadores, tablets e celulares.
 
-### 🎨 2. Design e experiência do usuário
+**Regra principal:** melhorar a aparência sem prejudicar o funcionamento atual do sistema.
 
-- Posicione o seletor no menu superior, respeitando o layout atual do site.
-- Utilize as bandeiras dos três países como opções de idioma.
-- Mostre visualmente qual idioma está selecionado.
-- Adicione um efeito visual discreto ao passar o mouse sobre as opções.
-- Utilize animações suaves e discretas, se forem compatíveis com o projeto.
-- Garanta que o seletor funcione corretamente em computadores, tablets e celulares.
-- Em telas pequenas, evite que as opções ultrapassem os limites da tela ou sobreponham outros elementos importantes.
-- Mantenha a identidade visual atual do site, incluindo cores, tipografia, espaçamentos e temas claro e escuro, caso existam.
-- Adicione acessibilidade: nomes dos idiomas para leitores de tela, navegação por teclado e estados de foco visíveis.
+---
 
-### 🌐 3. Tradução completa do frontend
+## 2. Etapa inicial — análise do projeto
 
-A tradução deve abranger todos os textos visíveis da interface, incluindo:
+Antes de modificar qualquer arquivo, o agente deve analisar cuidadosamente a estrutura existente.
 
-- Menu superior e navegação.
-- Botões e links.
-- Títulos e subtítulos.
-- Textos descritivos e informativos.
-- Formulários, campos, placeholders e mensagens de validação.
-- Mensagens de erro e sucesso exibidas pela interface.
-- Modais, menus suspensos, tooltips e notificações.
-- Textos de tabelas, filtros, paginação e estados vazios.
-- Telas de carregamento e mensagens de ausência de resultados.
-- Textos de acessibilidade, como rótulos e descrições de elementos.
-- Mensagens exibidas dinamicamente pelos componentes do frontend.
+### Tarefas
 
-Não traduza apenas a página inicial. Identifique as páginas, os componentes e os textos existentes no frontend para implementar a internacionalização de maneira consistente em toda a interface.
+- Identificar o framework, a linguagem e as bibliotecas utilizadas.
+- Identificar a arquitetura dos componentes.
+- Localizar arquivos CSS, SCSS, Tailwind ou outros sistemas de estilização.
+- Identificar os componentes globais e reutilizáveis.
+- Analisar a implementação atual dos temas Light e Dark.
+- Identificar botões, formulários, tabelas, cartões, menus e modais.
+- Verificar se existem variáveis CSS ou tokens de design.
+- Identificar bibliotecas de ícones e fontes já utilizadas.
+- Verificar o sistema de responsividade.
+- Identificar problemas visuais existentes.
 
-### 🔒 4. REGRA OBRIGATÓRIA: MODIFICAR APENAS O FRONTEND
+### Regras
 
-Esta é a parte mais importante da implementação.
+- Não modificar arquivos durante a análise inicial.
+- Não substituir a arquitetura existente sem necessidade.
+- Reutilizar os componentes e as dependências disponíveis.
+- Evitar criar componentes duplicados.
+- Criar um plano de implementação compatível com o projeto real.
 
-**A tradução deve afetar exclusivamente a interface do usuário (frontend).**
+Ao terminar a análise, implementar as melhorias em etapas pequenas e verificáveis.
 
-Não modifique:
-- Backend, APIs ou endpoints.
-- Banco de dados, tabelas ou estrutura dos dados.
-- Autenticação, login, cadastro ou permissões.
-- Regras de negócio ou lógica de processamento.
-- Estrutura das requisições e respostas da API.
-- Dados armazenados no banco de dados.
-- Conteúdos originais enviados ou recebidos do backend, exceto sua apresentação visual quando necessário.
-- Integrações com serviços externos.
-- Outras funcionalidades que não estejam relacionadas à troca de idioma.
+---
 
-Os textos da interface devem ser traduzidos por meio de arquivos de tradução ou de um mecanismo de internacionalização compatível com a arquitetura existente.
+## 3. Sistema de design global
 
-Não altere os dados originais. Por exemplo, nomes de usuários, nomes de produtos, nomes próprios, identificadores, códigos e valores devem continuar preservados, a menos que sejam textos de interface explicitamente destinados à tradução.
+Criar ou aprimorar um sistema de design centralizado para garantir que todas as páginas tenham a mesma identidade visual.
 
-Se o projeto possuir conteúdo dinâmico vindo de uma API, traduza somente os rótulos e elementos de interface controlados pelo frontend. Não altere os dados enviados ao servidor.
+### 3.1. Tokens de cores
 
-### ⚙️ 5. Implementação técnica
+Utilizar variáveis centralizadas para cores, bordas, sombras, tipografia e espaçamento.
 
-Antes de começar a programar:
+Exemplo conceitual:
 
-1. Analise a estrutura atual do projeto e identifique as tecnologias utilizadas.
-2. Verifique como o menu superior está implementado.
-3. Identifique se já existe alguma biblioteca ou sistema de internacionalização.
-4. Verifique se o projeto já possui arquivos de tradução ou configurações de idioma.
-5. Reutilize a arquitetura existente sempre que possível.
+```css
+:root {
+  --color-primary: #A8B8E8;
+  --color-secondary: #C9B8E8;
+  --color-accent: #A8D8CC;
 
-Depois, implemente a solução seguindo estas regras:
+  --color-background: #F8F7FC;
+  --color-surface: #FFFFFF;
+  --color-text: #343448;
+  --color-text-muted: #77778B;
 
-- Se já existir um sistema de internacionalização, reutilize-o e amplie-o.
-- Caso não exista, implemente uma solução compatível com o framework utilizado.
-- Organize as traduções em arquivos separados por idioma, se isso fizer sentido para a arquitetura.
-- Evite espalhar condições de idioma por todos os componentes.
-- Não utilize tradução automática por serviços externos a cada clique.
-- Não adicione dependências desnecessárias.
-- Preserve a linguagem de programação, as convenções e os padrões já utilizados no projeto.
+  --color-border: #E8E6F0;
 
-Configure os idiomas com os códigos corretos:
-- `en-US`
-- `es-ES`
-- `pt-BR`
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+```
 
-O idioma inicial deve respeitar a configuração atual do projeto. Se não houver configuração, utilize português brasileiro (`pt-BR`) como padrão.
+Os valores são referências iniciais, não uma imposição. Ajustá-los conforme a identidade visual existente.
 
-Se for seguro e compatível com a aplicação, salve a preferência do idioma no armazenamento local do navegador para que ela seja mantida após atualizar a página ou navegar entre telas. Não armazene informações sensíveis.
+### 3.2. Centralização
 
-### 🛡️ 6. Prevenção de bugs
+Criar tokens para:
 
-Tenha muito cuidado para não introduzir regressões.
+- Cores principais e secundárias.
+- Cores de fundo.
+- Superfícies e cartões.
+- Texto principal e secundário.
+- Bordas e divisores.
+- Estados de sucesso, alerta, erro e informação.
+- Sombras.
+- Raios de borda.
+- Espaçamentos.
+- Escala tipográfica.
+- Transições.
+- Estados de foco.
+- Altura e espaçamento dos controles.
 
-- Não reescreva componentes inteiros sem necessidade.
-- Não substitua arquivos completos quando alterações pontuais forem suficientes.
-- Não remova funcionalidades existentes.
-- Não altere rotas ou caminhos de navegação.
-- Não modifique estilos globais desnecessariamente.
-- Evite erros de renderização, hidratação ou carregamento, caso o projeto utilize essas tecnologias.
-- Evite que o seletor provoque mudanças inesperadas no layout.
-- Garanta que os textos não fiquem cortados ou sobrepostos após a tradução.
-- Não deixe chaves de tradução aparecendo na interface.
-- Não deixe textos importantes esquecidos em português quando outro idioma estiver selecionado.
-- Não provoque erros no console do navegador.
-- Não prejudique o desempenho ou a acessibilidade.
+Evitar cores aleatórias e valores repetidos desnecessariamente nos componentes.
 
-### 🧪 7. Testes obrigatórios
+---
 
-Depois da implementação, verifique:
+## 4. Paleta pastel sofisticada
 
-1. Se as três bandeiras aparecem corretamente no menu superior.
-2. Se clicar na bandeira dos EUA altera a interface para inglês norte-americano.
-3. Se clicar na bandeira da Espanha altera a interface para espanhol.
-4. Se clicar na bandeira do Brasil altera a interface para português brasileiro.
-5. Se a troca de idioma acontece sem recarregar a página, quando possível.
-6. Se o idioma selecionado permanece após atualizar a página, caso a persistência tenha sido implementada.
-7. Se a navegação entre páginas mantém o idioma selecionado.
-8. Se formulários, botões, modais, tabelas e notificações continuam funcionando.
-9. Se o seletor funciona em dispositivos móveis e em telas maiores.
-10. Se o tema claro e o escuro continuam funcionando, caso existam.
-11. Se nenhuma API, regra de negócio ou funcionalidade do backend foi alterada.
-12. Se os testes, verificações de tipos e ferramentas de análise disponíveis no projeto continuam passando.
+A identidade visual deve utilizar cores pastel modernas, equilibradas e agradáveis aos olhos.
 
-Corrija os problemas causados pelas alterações antes de finalizar.
+### 4.1. Cores principais
 
-### 📋 8. Relatório final
+| Cor | Referência | Aplicação |
+|---|---|---|
+| Azul pastel | `#A8B8E8` | Ações principais e elementos de destaque |
+| Lavanda | `#C9B8E8` | Elementos secundários e detalhes |
+| Verde menta | `#A8D8CC` | Sucesso e elementos positivos |
+| Rosa pastel | `#E8BFD0` | Destaques delicados |
+| Pêssego | `#F0C9B5` | Elementos complementares |
+| Amarelo suave | `#F1DEA0` | Alertas não críticos |
+| Fundo claro | `#F8F7FC` | Fundo geral do modo Light |
+| Branco | `#FFFFFF` | Cartões e superfícies |
+| Cinza-lilás | `#E8E6F0` | Bordas e divisores |
 
-Ao concluir, informe:
+### 4.2. Regras de aplicação
 
-- Quais arquivos foram criados ou modificados.
-- Como o sistema de troca de idioma funciona.
-- Quais páginas e componentes foram internacionalizados.
-- Como a preferência de idioma é armazenada, caso isso tenha sido implementado.
-- Quais testes foram executados e seus resultados.
-- Se existe algum texto da interface que ainda não foi traduzido.
-- Confirme explicitamente que o backend, as APIs, o banco de dados e as regras de negócio não foram modificados.
+- Usar uma cor principal dominante e cores secundárias com moderação.
+- Não aplicar todas as cores em todos os componentes.
+- Preservar uma hierarquia visual clara.
+- Utilizar cores fortes apenas quando necessário para destacar ações.
+- Não depender exclusivamente da cor para comunicar estados.
+- Garantir contraste suficiente entre textos e fundos.
+- Evitar fundos excessivamente coloridos que prejudiquem a leitura.
+- Não transformar a interface em um conjunto de cartões coloridos sem hierarquia.
 
-### INSTRUÇÃO FINAL
+O resultado deve transmitir tranquilidade, modernidade, organização e profissionalismo.
 
-Implemente essa funcionalidade diretamente no projeto existente, com alterações pequenas, seguras e organizadas.
+---
 
-**Não faça refatorações desnecessárias. Não modifique nada fora do escopo da internacionalização do frontend. Não invente estruturas sem antes analisar o projeto.**
+## 5. Redesign do modo Light
 
-Se alguma mudança necessária puder afetar o backend ou outras funcionalidades, não a execute automaticamente: procure uma alternativa exclusivamente no frontend.
+O modo claro deve ter aparência limpa, refinada e leve.
 
-O objetivo é adicionar uma troca de idiomas profissional, funcional, acessível e sem regressões, preservando integralmente o funcionamento atual do sistema.
+### Melhorias
+
+- Fundo geral em tom pastel quase branco.
+- Cartões brancos com bordas sutis.
+- Sombras discretas e naturais.
+- Textos em tons escuros com bom contraste.
+- Botões com cores pastel bem definidas.
+- Divisores discretos.
+- Menus com espaçamento adequado.
+- Campos de formulário com fundos claros e bordas elegantes.
+- Tabelas organizadas e visualmente leves.
+- Elementos de destaque sem excesso de saturação.
+
+### Evitar
+
+- Branco puro em todas as áreas sem variação visual.
+- Sombras escuras muito fortes.
+- Bordas excessivamente contrastantes.
+- Grandes áreas preenchidas com cores saturadas.
+- Texto cinza claro demais.
+
+---
+
+## 6. Redesign do modo Dark
+
+O modo escuro deve possuir uma identidade visual própria, em vez de simplesmente inverter as cores do modo claro.
+
+### Paleta de referência
+
+| Elemento | Cor sugerida |
+|---|---|
+| Fundo principal | `#171722` |
+| Fundo secundário | `#1E1E2B` |
+| Cartões | `#252536` |
+| Superfícies elevadas | `#2D2D40` |
+| Texto principal | `#F1EFF8` |
+| Texto secundário | `#B8B5C9` |
+| Bordas | `#3B394E` |
+| Azul pastel adaptado | `#B6C5FF` |
+| Lavanda adaptada | `#D2BEFF` |
+| Verde menta adaptado | `#A9E5D4` |
+| Rosa pastel adaptado | `#F0C4D8` |
+
+### Regras do modo Dark
+
+- Não utilizar preto absoluto em toda a interface.
+- Diferenciar visualmente fundo, cartões e superfícies elevadas.
+- Adaptar as cores pastel para manter a legibilidade.
+- Preservar o contraste dos textos.
+- Utilizar sombras com moderação.
+- Garantir que bordas e divisores permaneçam visíveis.
+- Adaptar gráficos, tabelas, menus, modais e formulários.
+- Evitar fundos claros acidentais em componentes.
+- Verificar ícones, placeholders, tooltips e estados desabilitados.
+- Não utilizar o modo Dark apenas como um filtro sobre o modo Light.
+
+**Resultado esperado:** um tema escuro elegante, com tons de grafite e lilás, detalhes pastel e excelente legibilidade.
+
+---
+
+## 7. Redesign completo dos botões
+
+Todos os botões devem seguir um sistema visual consistente.
+
+### 7.1. Botão primário
+
+Utilizado para as ações mais importantes.
+
+Características:
+
+- Cor de destaque pastel.
+- Texto com contraste adequado.
+- Bordas arredondadas.
+- Altura confortável.
+- Tipografia semibold.
+- Espaçamento interno equilibrado.
+- Estados de hover, foco, pressionado e desabilitado.
+- Feedback visual ao clicar.
+
+### 7.2. Botão secundário
+
+Utilizado para ações complementares.
+
+Características:
+
+- Fundo discreto.
+- Borda suave.
+- Texto legível.
+- Hover com mudança sutil de fundo.
+- Aparência menos chamativa que o botão primário.
+
+### 7.3. Botão terciário
+
+Utilizado para ações menos importantes.
+
+Características:
+
+- Aparência leve.
+- Pouca ou nenhuma borda.
+- Hover discreto.
+- Sem competir visualmente com as ações principais.
+
+### 7.4. Botões de perigo
+
+Utilizados para exclusões e ações destrutivas.
+
+Características:
+
+- Cor de erro acessível.
+- Identificação visual inequívoca.
+- Hover e foco perceptíveis.
+- Confirmação quando a ação puder causar perda de dados.
+
+Não utilizar vermelho para ações comuns.
+
+### 7.5. Botões com ícones
+
+- Utilizar a biblioteca de ícones já existente.
+- Padronizar tamanho e alinhamento.
+- Preservar o significado dos ícones.
+- Adicionar rótulos acessíveis.
+- Fornecer tooltip quando o botão não possuir texto visível.
+- Garantir área de interação adequada em dispositivos móveis.
+
+### 7.6. Microinterações
+
+Adicionar animações sutis:
+
+- Pequena mudança de tonalidade no hover.
+- Transição suave de borda e fundo.
+- Feedback ao pressionar.
+- Indicador de carregamento quando necessário.
+- Estado de sucesso quando já fizer parte do fluxo existente.
+
+Evitar movimentos exagerados, saltos, escalas excessivas e animações que atrasem a interação.
+
+### 7.7. Regras obrigatórias
+
+O redesign não pode alterar:
+
+- A ação executada pelo botão.
+- Os eventos associados.
+- Os destinos dos links.
+- As permissões.
+- A validação de formulários.
+- A lógica de envio.
+- O comportamento de carregamento.
+
+Modificar somente a apresentação visual, salvo ajustes estritamente necessários e autorizados para acessibilidade.
+
+---
+
+## 8. Tipografia profissional
+
+Criar uma hierarquia tipográfica consistente para toda a interface.
+
+### 8.1. Características desejadas
+
+- Excelente legibilidade.
+- Aparência moderna.
+- Boa leitura em telas pequenas.
+- Diferenciação clara entre títulos, subtítulos e textos.
+- Pesos tipográficos bem distribuídos.
+- Altura de linha confortável.
+
+### 8.2. Sugestões de fontes
+
+Priorizar as fontes já existentes no projeto. Caso seja necessário escolher uma nova fonte, avaliar:
+
+- Inter.
+- Manrope.
+- DM Sans.
+- Plus Jakarta Sans.
+
+Selecionar uma família principal e, no máximo, uma família complementar quando houver uma justificativa visual.
+
+### 8.3. Hierarquia de tamanhos
+
+| Elemento | Faixa de referência |
+|---|---|
+| Título principal | 28–36 px |
+| Título de seção | 22–28 px |
+| Subtítulo | 18–22 px |
+| Texto normal | 14–16 px |
+| Texto secundário | 12–14 px |
+| Rótulos de campos | 13–15 px |
+| Botões | 14–16 px |
+
+Adaptar os tamanhos à densidade da interface e ao projeto existente.
+
+### 8.4. Cuidados
+
+- Não utilizar fontes muito pequenas.
+- Evitar excesso de texto em negrito.
+- Não utilizar muitas famílias tipográficas.
+- Garantir que a fonte escolhida funcione com todos os idiomas disponíveis.
+- Evitar deslocamentos de layout durante o carregamento de fontes externas.
+- Não comprometer a velocidade de carregamento.
+
+---
+
+## 9. Cartões, painéis e componentes
+
+Modernizar os cartões sem exagerar na quantidade de elementos decorativos.
+
+### Diretrizes
+
+- Bordas arredondadas consistentes.
+- Espaçamento interno uniforme.
+- Sombras leves.
+- Títulos e descrições bem organizados.
+- Hierarquia clara entre conteúdo e ações.
+- Estados de hover somente quando o elemento for interativo.
+- Separação visual adequada entre componentes.
+- Layout adaptável ao conteúdo.
+
+Se o projeto possuir painéis administrativos ou dashboards, dar atenção especial aos cartões de indicadores e às áreas de resumo.
+
+Não adicionar gráficos ou indicadores fictícios. Preservar os dados e as funcionalidades atuais.
+
+---
+
+## 10. Tabelas e listas
+
+As tabelas devem ser fáceis de ler, especialmente em sistemas administrativos.
+
+### Melhorias
+
+- Cabeçalhos visualmente diferenciados.
+- Alinhamento consistente.
+- Espaçamento adequado entre linhas.
+- Separadores discretos.
+- Destaque sutil ao passar o mouse.
+- Estados de seleção bem definidos.
+- Paginação visualmente consistente.
+- Filtros e campos de busca padronizados.
+- Indicadores de ordenação claros.
+- Estados vazios com aparência profissional.
+- Mensagens de carregamento discretas.
+- Adaptação adequada aos modos Light e Dark.
+
+### Responsividade
+
+- Evitar que tabelas largas quebrem o layout.
+- Utilizar rolagem horizontal quando necessária.
+- Preservar a legibilidade em telas pequenas.
+- Não ocultar informações importantes silenciosamente.
+- Não alterar a lógica de ordenação, busca, filtros ou paginação.
+
+---
+
+## 11. Formulários e campos de entrada
+
+Padronizar todos os campos de entrada.
+
+### Características
+
+- Altura consistente.
+- Bordas arredondadas.
+- Espaçamento interno adequado.
+- Fundo adaptado ao tema atual.
+- Rótulos claros.
+- Placeholders discretos, mas legíveis.
+- Estados de foco visíveis.
+- Estados de erro e sucesso consistentes.
+- Mensagens de validação próximas ao campo correspondente.
+
+### Testes
+
+Verificar:
+
+- Campos obrigatórios.
+- Campos desabilitados.
+- Campos somente para leitura.
+- Seletores.
+- Caixas de seleção.
+- Botões de opção.
+- Campos de senha.
+- Datas e horários.
+- Uploads, quando existentes.
+
+Não modificar regras de validação ou os dados enviados.
+
+---
+
+## 12. Menus, navegação e cabeçalho
+
+Refinar a navegação principal e os menus existentes.
+
+### Diretrizes
+
+- Alinhamento consistente.
+- Espaçamento equilibrado.
+- Estados ativos facilmente identificáveis.
+- Hover discreto.
+- Ícones consistentes.
+- Menus suspensos com contraste adequado.
+- Cabeçalho responsivo.
+- Elementos de navegação acessíveis por teclado.
+- Compatibilidade com os três idiomas do projeto, caso o seletor de idiomas já exista.
+
+Não alterar a estrutura das rotas nem remover opções de navegação.
+
+---
+
+## 13. Modais, notificações e mensagens
+
+Padronizar a aparência de:
+
+- Modais.
+- Alertas.
+- Toasts.
+- Tooltips.
+- Mensagens de erro.
+- Mensagens de sucesso.
+- Confirmações.
+- Indicadores de carregamento.
+
+### Diretrizes
+
+- Contraste adequado nos dois temas.
+- Hierarquia clara entre título, conteúdo e ações.
+- Botões de fechamento acessíveis.
+- Espaçamento consistente.
+- Animações rápidas e discretas.
+- Boa adaptação a telas pequenas.
+
+Preservar o comportamento e o conteúdo funcional das mensagens.
+
+---
+
+## 14. Ícones e elementos visuais
+
+- Reutilizar a biblioteca de ícones existente.
+- Evitar misturar estilos diferentes.
+- Padronizar tamanho e espessura.
+- Alinhar ícones com textos e botões.
+- Não substituir ícones funcionais por símbolos ambíguos.
+- Garantir contraste adequado em Light e Dark.
+- Evitar o uso excessivo de emojis como elementos de interface.
+
+Caso não exista uma biblioteca, avaliar alternativas leves antes de adicionar dependências.
+
+---
+
+## 15. Animações e transições
+
+Adicionar movimento apenas quando melhorar a experiência do usuário.
+
+### Exemplos
+
+- Transições suaves em botões.
+- Mudança de fundo nos cartões interativos.
+- Abertura discreta de menus.
+- Transição controlada entre temas.
+- Feedback visual de seleção.
+
+### Restrições
+
+- Não adicionar animações pesadas.
+- Não atrasar ações importantes.
+- Evitar efeitos que causem mudanças inesperadas no layout.
+- Respeitar a preferência `prefers-reduced-motion`.
+- Não executar animações continuamente sem necessidade.
+
+---
+
+## 16. Acessibilidade e usabilidade
+
+O design deve continuar utilizável por pessoas com diferentes necessidades.
+
+### Requisitos
+
+- Contraste adequado entre texto e fundo.
+- Navegação por teclado.
+- Foco visível.
+- Rótulos acessíveis.
+- Tamanho confortável dos controles.
+- Estados que não dependam somente de cores.
+- Mensagens de erro compreensíveis.
+- Compatibilidade com leitores de tela.
+- Respeito à redução de movimento.
+- Zoom do navegador sem perda de funcionalidades.
+
+Sempre que possível, utilizar as diretrizes WCAG 2.2 nível AA como referência.
+
+Não remover atributos de acessibilidade existentes.
+
+---
+
+## 17. Responsividade
+
+Garantir consistência visual nos seguintes cenários:
+
+- Celulares pequenos.
+- Celulares grandes.
+- Tablets.
+- Notebooks.
+- Monitores de desktop.
+- Telas largas.
+
+### Regras
+
+- Não fixar larguras desnecessárias.
+- Evitar conteúdo cortado.
+- Preservar a hierarquia tipográfica.
+- Ajustar espaçamentos conforme a tela.
+- Evitar rolagem horizontal da página inteira.
+- Preservar a funcionalidade dos menus.
+- Garantir que botões e campos permaneçam acessíveis.
+- Testar páginas com conteúdo extenso.
+
+---
+
+## 18. Arquitetura e organização do código
+
+Implementar o redesign da forma mais reutilizável possível.
+
+### Prioridades
+
+1. Reutilizar os tokens de design existentes.
+2. Criar variáveis globais quando necessário.
+3. Padronizar os componentes compartilhados.
+4. Evitar estilos duplicados.
+5. Evitar seletores CSS excessivamente genéricos.
+6. Preservar os estilos específicos dos componentes quando forem necessários.
+7. Utilizar as convenções da tecnologia existente.
+8. Não instalar bibliotecas sem justificativa.
+9. Evitar alterações que afetem páginas não relacionadas.
+10. Manter o código fácil de compreender e manter.
+
+### Tema Light e Dark
+
+Utilizar o mecanismo de tema já existente.
+
+Se for necessário aprimorá-lo:
+
+- Centralizar os tokens dos dois temas.
+- Garantir que os componentes utilizem as variáveis corretas.
+- Evitar duplicação desnecessária de estilos.
+- Preservar a preferência de tema atual do usuário.
+- Garantir consistência durante a navegação.
+- Verificar que nenhum componente fique com cores fixas incompatíveis com o tema.
+
+Não implementar um segundo sistema de temas se o projeto já possuir um funcional.
+
+---
+
+## 19. Plano de execução por fases
+
+### Fase 1 — Auditoria visual
+
+- Analisar a arquitetura.
+- Mapear os componentes.
+- Identificar inconsistências.
+- Avaliar o sistema de temas.
+- Registrar os problemas encontrados.
+
+**Critério de conclusão:** existe um diagnóstico claro, sem alterações desnecessárias no código.
+
+### Fase 2 — Sistema de design
+
+- Definir tokens.
+- Refinar a paleta pastel.
+- Organizar a tipografia.
+- Padronizar bordas, sombras e espaçamentos.
+- Preparar as variantes Light e Dark.
+
+**Critério de conclusão:** os tokens estão organizados e os dois temas apresentam uma identidade visual consistente.
+
+### Fase 3 — Componentes globais
+
+- Refinar botões.
+- Refinar campos de entrada.
+- Refinar cartões.
+- Refinar menus.
+- Refinar modais.
+- Padronizar ícones e estados.
+
+**Critério de conclusão:** os componentes compartilhados apresentam comportamento visual uniforme sem perder suas funcionalidades.
+
+### Fase 4 — Aplicação nas páginas
+
+- Aplicar o sistema de design progressivamente.
+- Corrigir inconsistências locais.
+- Revisar tabelas e listas.
+- Refinar painéis e dashboards.
+- Corrigir problemas de espaçamento.
+- Verificar páginas com conteúdo extenso.
+
+**Critério de conclusão:** as páginas contempladas apresentam consistência visual.
+
+### Fase 5 — Responsividade e acessibilidade
+
+- Testar diferentes tamanhos de tela.
+- Corrigir problemas de layout.
+- Verificar contraste.
+- Testar teclado e foco.
+- Revisar estados de erro e desabilitados.
+- Verificar redução de movimento.
+
+**Critério de conclusão:** a interface permanece utilizável em diferentes dispositivos e condições de acessibilidade.
+
+### Fase 6 — Validação e correção
+
+- Executar os testes existentes.
+- Executar o linter e a verificação de tipos, quando disponíveis.
+- Verificar erros de console.
+- Conferir os dois temas.
+- Testar os principais fluxos da aplicação.
+- Revisar alterações no código.
+- Corrigir regressões identificadas.
+
+**Critério de conclusão:** os testes disponíveis passam e não há regressões conhecidas introduzidas pelo redesign.
+
+---
+
+## 20. Critérios finais de qualidade
+
+Considerar a implementação concluída somente após verificar:
+
+- [ ] Paleta pastel consistente.
+- [ ] Modo Light refinado.
+- [ ] Modo Dark refinado.
+- [ ] Botões padronizados.
+- [ ] Tipografia consistente.
+- [ ] Cartões e painéis modernizados.
+- [ ] Tabelas legíveis.
+- [ ] Formulários consistentes.
+- [ ] Menus e modais revisados.
+- [ ] Estados de erro e sucesso padronizados.
+- [ ] Ícones consistentes.
+- [ ] Layout responsivo.
+- [ ] Contraste adequado.
+- [ ] Acessibilidade preservada.
+- [ ] Ausência de textos cortados.
+- [ ] Ausência de sobreposições.
+- [ ] Ausência de erros conhecidos no console.
+- [ ] Testes disponíveis executados.
+- [ ] Funcionalidades originais preservadas.
+- [ ] Nenhuma alteração indevida no backend.
+- [ ] Código organizado e reutilizável.
+
+---
+
+## 21. Restrições obrigatórias
+
+**NÃO FAZER:**
+
+- Reescrever o projeto inteiro.
+- Alterar regras de negócio.
+- Modificar o backend.
+- Alterar o banco de dados.
+- Modificar APIs ou endpoints.
+- Alterar autenticação ou permissões.
+- Remover funcionalidades.
+- Modificar rotas sem necessidade.
+- Substituir bibliotecas sem justificativa.
+- Introduzir dependências pesadas sem necessidade.
+- Modificar dados reais.
+- Criar componentes duplicados sem necessidade.
+- Aplicar mudanças globais sem avaliar os impactos.
+- Sacrificar acessibilidade em favor da estética.
+
+**FAZER:**
+
+- Trabalhar com alterações pequenas e verificáveis.
+- Reutilizar componentes existentes.
+- Priorizar consistência visual.
+- Testar os dois temas.
+- Preservar o comportamento original.
+- Corrigir os problemas introduzidos pela implementação.
+- Documentar as mudanças realizadas.
+
+---
+
+## 22. Instrução final para o agente de programação
+
+Execute este plano diretamente no projeto existente, respeitando a arquitetura, a tecnologia e os padrões já utilizados.
+
+Priorize uma transformação visual de alta qualidade, com aparência premium, paleta pastel sofisticada, tipografia elegante, botões refinados e modos Light e Dark cuidadosamente desenvolvidos.
+
+Não se limite a trocar algumas cores. Analise a interface completa e aplique o sistema de design de maneira consistente nos componentes e nas páginas existentes.
+
+Trabalhe por fases, validando cada conjunto de alterações antes de avançar.
+
+**A qualidade visual deve ser maximizada dentro dos limites de segurança, acessibilidade, desempenho e compatibilidade com o projeto.**
+
+Se uma melhoria estética puder comprometer uma funcionalidade, preserve a funcionalidade e procure uma alternativa visual segura.
+
+Ao finalizar, apresente um relatório com os arquivos alterados, as melhorias implementadas, os testes executados, os resultados e eventuais pendências.
+
+O resultado esperado é uma interface moderna, sofisticada, agradável, acessível e consistente, com excelente experiência visual nos temas Light e Dark, sem regressões funcionais.
